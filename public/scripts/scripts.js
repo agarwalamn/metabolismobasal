@@ -47,12 +47,13 @@ formulario.addEventListener("submit", function (event) {
 
 function calcular(event) {
   event.preventDefault();
+  
   const peso = Number(document.getElementById('peso').value);
   const idade = Number(document.getElementById('idade').value);
   const altura = Number(document.getElementById('altura').value);
   const genero = seleciona('genero');
   const dados = calcTMB(peso, idade, altura, genero);
-
+  
   document.getElementById('metabolismo_basal').innerHTML = Math.ceil(
     dados.basal
   );
@@ -75,7 +76,7 @@ function calcular(event) {
   );
 
   document.getElementById('result-data').style.visibility = 'visible';
-}
+} 
 
 //pega o genero se masculino ou feminino
 function seleciona(id) {
